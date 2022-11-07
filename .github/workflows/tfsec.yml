@@ -10,5 +10,5 @@ jobs:
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     container:
-      image: tfsec:tfsec
+      image: tfsec
         
