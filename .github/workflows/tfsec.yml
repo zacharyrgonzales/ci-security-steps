@@ -5,10 +5,9 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Login to DockerHub Registry
-        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     container:
       image: tfsec/tfsec:v1.13.2-arm64v8
+    steps:
+    - name: display version
+      step: tfsec --versio
         
