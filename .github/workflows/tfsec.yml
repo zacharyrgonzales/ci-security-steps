@@ -9,5 +9,5 @@ jobs:
       image: tfsec/tfsec:v1.13.2-arm64v8
     steps:
     - name: display version
-      step: tfsec --versio
+      uses: tfsec --versio
         
