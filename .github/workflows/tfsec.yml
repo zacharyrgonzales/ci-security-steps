@@ -5,13 +5,10 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    container:
-      # image: 'ubuntu:20.04' # can also use this to test
-      image: 'tfsec/tfsec'
-      credentials:
-         username: ${{ secrets.DOCKERHUB_TOKEN }}
-         password: ${{ secrets.DOCKERHUB_USERNAME }}
     steps:
-    - uses: actions/checkout@main   
-      
+      - uses: actions/checkout@v1
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+    container:
+      image: tfsec:tfsec
         
