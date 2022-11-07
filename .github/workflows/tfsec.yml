@@ -6,7 +6,7 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: tfsec:latest
+      image: tfsec:tfsec
     steps:
       - name: scan local terraform respository
         run: tfsec
