@@ -11,4 +11,7 @@ jobs:
       credentials:
          username: ${{ secrets.DOCKERHUB_TOKEN }}
          password: ${{ secrets.DOCKERHUB_USERNAME }}
+    steps:
+    - uses: actions/checkout@main   
+      
         
